@@ -8,12 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		09BD63F71F7BAE5500949EBD /* DesignablePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 09BD63F51F7BAE5500949EBD /* DesignablePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09BD64011F7BB05800949EBD /* pickerArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 09BD63FF1F7BB04A00949EBD /* pickerArrow.png */; };
+		09BD64021F7BB05B00949EBD /* pickerArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09BD64001F7BB04A00949EBD /* pickerArrow@2x.png */; };
+		09BD64031F7BB05F00949EBD /* pickerArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09BD63FE1F7BB04A00949EBD /* pickerArrow@3x.png */; };
+		09BD64071F7BB1D300949EBD /* DesignablePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BD64041F7BB1D200949EBD /* DesignablePicker.swift */; };
+		09BD64081F7BB1D300949EBD /* FirstResponderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BD64061F7BB1D200949EBD /* FirstResponderControl.swift */; };
+		09BD64091F7BB1E400949EBD /* DesignablePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BD64051F7BB1D200949EBD /* DesignablePicker.xib */; };
+		09BD640D1F7BB27F00949EBD /* PickerInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BD640B1F7BB27C00949EBD /* PickerInputViewController.swift */; };
+		09BD640E1F7BB28400949EBD /* PickerInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BD640C1F7BB27C00949EBD /* PickerInputViewController.xib */; };
+		09BD64151F7BB37F00949EBD /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BD64131F7BB2EE00949EBD /* StringExtension.swift */; };
+		09BD64161F7BB38100949EBD /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BD64111F7BB2EE00949EBD /* UIColorExtension.swift */; };
+		09BD64171F7BB38400949EBD /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BD64121F7BB2EE00949EBD /* UIImageViewExtension.swift */; };
+		09BD64181F7BB38700949EBD /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BD64141F7BB2EE00949EBD /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		09BD63F21F7BAE5500949EBD /* DesignablePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignablePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09BD63F51F7BAE5500949EBD /* DesignablePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignablePicker.h; sourceTree = "<group>"; };
 		09BD63F61F7BAE5500949EBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09BD63FE1F7BB04A00949EBD /* pickerArrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pickerArrow@3x.png"; sourceTree = "<group>"; };
+		09BD63FF1F7BB04A00949EBD /* pickerArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pickerArrow.png; sourceTree = "<group>"; };
+		09BD64001F7BB04A00949EBD /* pickerArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pickerArrow@2x.png"; sourceTree = "<group>"; };
+		09BD64041F7BB1D200949EBD /* DesignablePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignablePicker.swift; sourceTree = "<group>"; };
+		09BD64051F7BB1D200949EBD /* DesignablePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DesignablePicker.xib; sourceTree = "<group>"; };
+		09BD64061F7BB1D200949EBD /* FirstResponderControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstResponderControl.swift; sourceTree = "<group>"; };
+		09BD640B1F7BB27C00949EBD /* PickerInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerInputViewController.swift; sourceTree = "<group>"; };
+		09BD640C1F7BB27C00949EBD /* PickerInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerInputViewController.xib; sourceTree = "<group>"; };
+		09BD64111F7BB2EE00949EBD /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		09BD64121F7BB2EE00949EBD /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		09BD64131F7BB2EE00949EBD /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		09BD64141F7BB2EE00949EBD /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,8 +72,52 @@
 			children = (
 				09BD63F51F7BAE5500949EBD /* DesignablePicker.h */,
 				09BD63F61F7BAE5500949EBD /* Info.plist */,
+				09BD64041F7BB1D200949EBD /* DesignablePicker.swift */,
+				09BD64051F7BB1D200949EBD /* DesignablePicker.xib */,
+				09BD64061F7BB1D200949EBD /* FirstResponderControl.swift */,
+				09BD640A1F7BB26D00949EBD /* PickerInputViewController */,
+				09BD640F1F7BB2CF00949EBD /* Helper */,
+				09BD63FD1F7BAFE600949EBD /* Resources */,
 			);
 			path = DesignablePicker;
+			sourceTree = "<group>";
+		};
+		09BD63FD1F7BAFE600949EBD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				09BD63FF1F7BB04A00949EBD /* pickerArrow.png */,
+				09BD64001F7BB04A00949EBD /* pickerArrow@2x.png */,
+				09BD63FE1F7BB04A00949EBD /* pickerArrow@3x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		09BD640A1F7BB26D00949EBD /* PickerInputViewController */ = {
+			isa = PBXGroup;
+			children = (
+				09BD640B1F7BB27C00949EBD /* PickerInputViewController.swift */,
+				09BD640C1F7BB27C00949EBD /* PickerInputViewController.xib */,
+			);
+			path = PickerInputViewController;
+			sourceTree = "<group>";
+		};
+		09BD640F1F7BB2CF00949EBD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				09BD64101F7BB2CF00949EBD /* Extensions */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		09BD64101F7BB2CF00949EBD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				09BD64131F7BB2EE00949EBD /* StringExtension.swift */,
+				09BD64111F7BB2EE00949EBD /* UIColorExtension.swift */,
+				09BD64121F7BB2EE00949EBD /* UIImageViewExtension.swift */,
+				09BD64141F7BB2EE00949EBD /* UIViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +163,7 @@
 				TargetAttributes = {
 					09BD63F11F7BAE5500949EBD = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -121,6 +190,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09BD64031F7BB05F00949EBD /* pickerArrow@3x.png in Resources */,
+				09BD64091F7BB1E400949EBD /* DesignablePicker.xib in Resources */,
+				09BD64021F7BB05B00949EBD /* pickerArrow@2x.png in Resources */,
+				09BD640E1F7BB28400949EBD /* PickerInputViewController.xib in Resources */,
+				09BD64011F7BB05800949EBD /* pickerArrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +205,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09BD64151F7BB37F00949EBD /* StringExtension.swift in Sources */,
+				09BD64071F7BB1D300949EBD /* DesignablePicker.swift in Sources */,
+				09BD64171F7BB38400949EBD /* UIImageViewExtension.swift in Sources */,
+				09BD64161F7BB38100949EBD /* UIColorExtension.swift in Sources */,
+				09BD64181F7BB38700949EBD /* UIViewExtension.swift in Sources */,
+				09BD64081F7BB1D300949EBD /* FirstResponderControl.swift in Sources */,
+				09BD640D1F7BB27F00949EBD /* PickerInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,7 +267,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -240,7 +321,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -253,6 +334,7 @@
 		09BD63FB1F7BAE5500949EBD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -262,10 +344,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = DesignablePicker/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pronin.DesignablePicker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -274,6 +358,7 @@
 		09BD63FC1F7BAE5500949EBD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -283,6 +368,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = DesignablePicker/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pronin.DesignablePicker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

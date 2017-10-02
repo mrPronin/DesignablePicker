@@ -201,7 +201,7 @@ import UIKit
     fileprivate var titleFontScale:CGFloat = 1
     fileprivate let textLeadingSpace:CGFloat = 8
     fileprivate let titleAnimationDuration:TimeInterval = 0.3
-    fileprivate let pickerInputViewController = PickerInputViewController(nibName: nil, bundle: nil)
+    fileprivate var pickerInputViewController: PickerInputViewController!
 
     fileprivate func setup(text perhapsText:String?, forTextLabel textLabel:UILabel, titleLabel:UILabel, animated:Bool, selected forceSelected:Bool = false)
     {
@@ -351,6 +351,10 @@ import UIKit
         self.textLabel.font = self.font
         self.titleFontScale = self.titleFont.pointSize / self.font.pointSize
         self.initialFrame = nil
+        let controllerNibName = String.className(PickerInputViewController.classForCoder())
+        let controllerbBundle = Bundle(for: PickerInputViewController.classForCoder())
+        self.pickerInputViewController = PickerInputViewController(nibName: controllerNibName, bundle: controllerbBundle)
+
         self.responderView.inputView = self.pickerInputViewController.view
         self.responderView.inputAccessoryView = self.pickerInputViewController.toolbar
         

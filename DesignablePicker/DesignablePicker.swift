@@ -18,7 +18,7 @@
 
 import UIKit
 
-@objc protocol PickerInputDelegate: class, NSObjectProtocol
+@objc public protocol PickerInputDelegate: class, NSObjectProtocol
 {
     func pickerInputDidCancel(_ picker: DesignablePicker)
     func pickerInput(_ picker: DesignablePicker, doneWithValue value: String, andIndex index:Int)
@@ -28,7 +28,7 @@ import UIKit
     @objc optional func pickerInputRowHeight(_ picker: DesignablePicker) -> CGFloat
 }
 
-@IBDesignable class DesignablePicker: UIView
+@IBDesignable public class DesignablePicker: UIView
 {
     //MARK: Public
     
@@ -109,7 +109,7 @@ import UIKit
         }
     }
     
-    @IBInspectable var color: UIColor = UIColor.lightGray {
+    @IBInspectable public var color: UIColor = UIColor.lightGray {
         didSet {
             self.layer.borderColor = color.cgColor
             self.titleLabel.textColor = color
@@ -118,7 +118,7 @@ import UIKit
         }
     }
     
-    @IBInspectable var background: UIColor? {
+    @IBInspectable public var background: UIColor? {
         get {
             return self.view.backgroundColor
         }
@@ -128,7 +128,7 @@ import UIKit
         }
     }
 
-    @IBInspectable var textColor: UIColor? {
+    @IBInspectable public var textColor: UIColor? {
         set(newColor) {
             self.textLabel.textColor = newColor
             setNeedsLayout()
@@ -138,21 +138,21 @@ import UIKit
         }
     }
     
-    @IBInspectable var borderWidth: CGFloat = 1.0 {
+    @IBInspectable public var borderWidth: CGFloat = 1.0 {
         didSet {
             self.layer.borderWidth = borderWidth
             setNeedsLayout()
         }
     }
     
-    @IBInspectable var cornerRadius: CGFloat = 4.0 {
+    @IBInspectable public var cornerRadius: CGFloat = 4.0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
             setNeedsLayout()
         }
     }
     
-    @IBInspectable var title: String? {
+    @IBInspectable public var title: String? {
         set(newTitle) {
             self.titleLabel.text = newTitle
         }
@@ -161,7 +161,7 @@ import UIKit
         }
     }
 
-    override init(frame: CGRect)
+    public override init(frame: CGRect)
     {
 //        print("[\(type(of: self)) \(#function)]")
         // 1. setup any properties here
@@ -175,7 +175,7 @@ import UIKit
         self.setupViewsOnLoad()
     }
     
-    required init?(coder aDecoder: NSCoder)
+    public required init?(coder aDecoder: NSCoder)
     {
 //        print("[\(type(of: self)) \(#function)]")
         // 1. setup any properties here

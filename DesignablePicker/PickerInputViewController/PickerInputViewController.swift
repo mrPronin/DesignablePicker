@@ -60,6 +60,14 @@ class PickerInputViewController: UIViewController
         super.viewDidLoad()
         self.setupViewsOnLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        //        print("[\(type(of: self)) \(#function)]")
+        DispatchQueue.main.async {
+            self.picker.selectRow(self.selectedIndex, inComponent: 0, animated: true)
+        }
+    }
 
     override func didReceiveMemoryWarning()
     {
@@ -84,6 +92,7 @@ class PickerInputViewController: UIViewController
             return
         }
         let index = self.picker.selectedRow(inComponent: 0)
+        self.selectedIndex = index
         let value = data[index]
         delegate.pickerInput(self, doneWithValue: value, andIndex: index)
     }

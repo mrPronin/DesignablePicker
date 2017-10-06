@@ -20,8 +20,8 @@ import UIKit
 
 @objc public protocol PickerInputDelegate: class, NSObjectProtocol
 {
-    func pickerInputDidCancel(_ picker: DesignablePicker)
     func pickerInput(_ picker: DesignablePicker, doneWithValue value: String, andIndex index:Int)
+    @objc optional func pickerInputDidCancel(_ picker: DesignablePicker)
     @objc optional func pickerInput(_ picker: DesignablePicker, changedWithValue value: String, andIndex index:Int)
     @objc optional func pickerInput(_ picker: DesignablePicker, viewForRow row: Int, reusing view: UIView?) -> UIView
     @objc optional func pickerInput(_ picker: DesignablePicker, titleForRow row: Int) -> String
@@ -161,6 +161,15 @@ import UIKit
         }
     }
     
+    @objc public var selectedIndex: Int {
+        get {
+            return self.pickerInputViewController.selectedIndex
+        }
+        set(newSelectedIndex) {
+            self.pickerInputViewController.selectedIndex = newSelectedIndex
+        }
+    }
+
     @objc public override init(frame: CGRect)
     {
         //        print("[\(type(of: self)) \(#function)]")
@@ -379,13 +388,12 @@ extension DesignablePicker: PickerInputViewControllerDelegate
     {
         //        print("[\(type(of: self)) \(#function)]")
         self.responderView.resignFirstResponder()
-        self.delegate?.pickerInputDidCancel(self)
+        self.delegate?.pickerInputDidCancel?(self)
     }
     
     func pickerInput(_ controller: PickerInputViewController, doneWithValue value: String, andIndex index:Int)
     {
         //        print("[\(type(of: self)) \(#function)]")
-        self.set(text: value, animated: true)
         self.responderView.resignFirstResponder()
         self.delegate?.pickerInput(self, doneWithValue: value, andIndex: index)
     }

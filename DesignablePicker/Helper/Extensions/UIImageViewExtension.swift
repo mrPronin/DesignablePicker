@@ -1,6 +1,6 @@
 //
 //  UIImageViewExtension.swift
-//  DesignablePickerDemo
+//  DesignablePicker
 //
 //  Created by Aleksandr Pronin on 2/1/17.
 //  Copyright © 2017 Aleksandr Pronin. All rights reserved.

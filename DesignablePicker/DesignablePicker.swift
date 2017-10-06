@@ -1,6 +1,6 @@
 //
 //  DesignablePicker.swift
-//  DesignablePickerDemo
+//  DesignablePicker
 //
 //  Created by Oleksandr Pronin on 25.09.17.
 //  Copyright © 2017 adviqo AG. All rights reserved.
@@ -14,7 +14,7 @@
  
  iOS SDK: Creating a Custom Text Input View
  https://code.tutsplus.com/tutorials/ios-sdk-creating-a-custom-text-input-view--mobile-15661
-*/
+ */
 
 import UIKit
 
@@ -28,12 +28,12 @@ import UIKit
     @objc optional func pickerInputRowHeight(_ picker: DesignablePicker) -> CGFloat
 }
 
-@IBDesignable public class DesignablePicker: UIView
+@objc @IBDesignable public class DesignablePicker: UIView
 {
     //MARK: Public
     
-    public weak var delegate: PickerInputDelegate?
-    public var data: [String]? {
+    @objc public weak var delegate: PickerInputDelegate?
+    @objc public var data: [String]? {
         get {
             return self.pickerInputViewController.data
         }
@@ -41,8 +41,8 @@ import UIKit
             self.pickerInputViewController.data = newValue
         }
     }
-
-    public var text:String? {
+    
+    @objc public var text:String? {
         set(newText) {
             self.setup(text: text, forTextLabel: self.textLabel, titleLabel: self.titleLabel, animated: false)
         }
@@ -51,24 +51,24 @@ import UIKit
         }
     }
     
-    public func set(text perhapsText:String?, animated:Bool = false)
+    @objc public func set(text perhapsText:String?, animated:Bool = false)
     {
         self.setup(text: perhapsText, forTextLabel: self.textLabel, titleLabel: self.titleLabel, animated: animated)
     }
     
-    public var font = UIFont.systemFont(ofSize: 18) {
+    @objc public var font = UIFont.systemFont(ofSize: 18) {
         didSet {
             self.titleFontScale = titleFont.pointSize / font.pointSize
         }
     }
     
-    public var titleFont = UIFont.systemFont(ofSize: 10) {
+    @objc public var titleFont = UIFont.systemFont(ofSize: 10) {
         didSet {
             self.titleFontScale = titleFont.pointSize / font.pointSize
         }
     }
     
-    public var pickerFont: UIFont? {
+    @objc public var pickerFont: UIFont? {
         get {
             return self.pickerInputViewController.font
         }
@@ -76,8 +76,8 @@ import UIKit
             self.pickerInputViewController.font = newValue
         }
     }
-
-    public var pickerColor: UIColor? {
+    
+    @objc public var pickerColor: UIColor? {
         get {
             return self.pickerInputViewController.tintColor
         }
@@ -86,7 +86,7 @@ import UIKit
         }
     }
     
-    public var toolbarBackgroundColor: UIColor? {
+    @objc public var toolbarBackgroundColor: UIColor? {
         get {
             return self.pickerInputViewController.toolbar.backgroundColor
         }
@@ -95,21 +95,21 @@ import UIKit
         }
     }
     
-    public var activeStateColor: UIColor?
+    @objc public var activeStateColor: UIColor?
     
-    public var cancelButton: UIBarButtonItem! {
+    @objc public var cancelButton: UIBarButtonItem! {
         get {
             return self.pickerInputViewController.cancelButton
         }
     }
     
-    public var doneButton: UIBarButtonItem! {
+    @objc public var doneButton: UIBarButtonItem! {
         get {
             return self.pickerInputViewController.doneButton
         }
     }
     
-    @IBInspectable public var color: UIColor = UIColor.lightGray {
+    @objc @IBInspectable public var color: UIColor = UIColor.lightGray {
         didSet {
             self.layer.borderColor = color.cgColor
             self.titleLabel.textColor = color
@@ -118,7 +118,7 @@ import UIKit
         }
     }
     
-    @IBInspectable public var background: UIColor? {
+    @objc @IBInspectable public var background: UIColor? {
         get {
             return self.view.backgroundColor
         }
@@ -127,8 +127,8 @@ import UIKit
             setNeedsLayout()
         }
     }
-
-    @IBInspectable public var textColor: UIColor? {
+    
+    @objc @IBInspectable public var textColor: UIColor? {
         set(newColor) {
             self.textLabel.textColor = newColor
             setNeedsLayout()
@@ -138,21 +138,21 @@ import UIKit
         }
     }
     
-    @IBInspectable public var borderWidth: CGFloat = 1.0 {
+    @objc @IBInspectable public var borderWidth: CGFloat = 1.0 {
         didSet {
             self.layer.borderWidth = borderWidth
             setNeedsLayout()
         }
     }
     
-    @IBInspectable public var cornerRadius: CGFloat = 4.0 {
+    @objc @IBInspectable public var cornerRadius: CGFloat = 4.0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
             setNeedsLayout()
         }
     }
     
-    @IBInspectable public var title: String? {
+    @objc @IBInspectable public var title: String? {
         set(newTitle) {
             self.titleLabel.text = newTitle
         }
@@ -160,10 +160,10 @@ import UIKit
             return self.titleLabel.text
         }
     }
-
-    public override init(frame: CGRect)
+    
+    @objc public override init(frame: CGRect)
     {
-//        print("[\(type(of: self)) \(#function)]")
+        //        print("[\(type(of: self)) \(#function)]")
         // 1. setup any properties here
         
         // 2. call super.init(frame:)
@@ -175,9 +175,9 @@ import UIKit
         self.setupViewsOnLoad()
     }
     
-    public required init?(coder aDecoder: NSCoder)
+    @objc public required init?(coder aDecoder: NSCoder)
     {
-//        print("[\(type(of: self)) \(#function)]")
+        //        print("[\(type(of: self)) \(#function)]")
         // 1. setup any properties here
         
         // 2. call super.init(coder:)
@@ -202,7 +202,7 @@ import UIKit
     fileprivate let textLeadingSpace:CGFloat = 8
     fileprivate let titleAnimationDuration:TimeInterval = 0.3
     fileprivate var pickerInputViewController: PickerInputViewController!
-
+    
     fileprivate func setup(text perhapsText:String?, forTextLabel textLabel:UILabel, titleLabel:UILabel, animated:Bool, selected forceSelected:Bool = false)
     {
         guard let titleSuperView = titleLabel.superview else {
@@ -262,11 +262,13 @@ import UIKit
         }
         if animated {
             beforeAnimationClosure()
-            UIView.animate(withDuration: self.titleAnimationDuration, animations: {
-                animationClosure()
-            }, completion: { _ in
-                afterAnimationClosure()
-            })
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: self.titleAnimationDuration, animations: {
+                    animationClosure()
+                }, completion: { _ in
+                    afterAnimationClosure()
+                })
+            }
             return
         }
         beforeAnimationClosure()
@@ -291,7 +293,7 @@ import UIKit
         // Make the view stretch with containing view
         //        self.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
         // Adding custom subview on top of our view (over any custom drawing > see note below)
-
+        
         addSubview(self.view)
         
         let views:[String:UIView] = ["contentView" : self.view]
@@ -333,12 +335,12 @@ import UIKit
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
+    
     /*
-    @objc func datePickerDidChangeValue(sender: UIDatePicker) {
-        print("[\(type(of: self)) \(#function)] date: \(sender.date.description)")
-    }
-    */
+     @objc func datePickerDidChangeValue(sender: UIDatePicker) {
+     print("[\(type(of: self)) \(#function)] date: \(sender.date.description)")
+     }
+     */
     
     fileprivate func setupViewsOnLoad()
     {
@@ -354,7 +356,7 @@ import UIKit
         let controllerNibName = String.className(PickerInputViewController.classForCoder())
         let controllerbBundle = Bundle(for: PickerInputViewController.classForCoder())
         self.pickerInputViewController = PickerInputViewController(nibName: controllerNibName, bundle: controllerbBundle)
-
+        
         self.responderView.inputView = self.pickerInputViewController.view
         self.responderView.inputAccessoryView = self.pickerInputViewController.toolbar
         
@@ -362,12 +364,12 @@ import UIKit
         self.pickerInputViewController.delegate = self
         self.setupNotifications()
         
-//        self.responderView.addTarget(self.responderView, action: #selector(becomeFirstResponder), for: .touchUpInside)
-//        self.responderView.delegate = self
+        //        self.responderView.addTarget(self.responderView, action: #selector(becomeFirstResponder), for: .touchUpInside)
+        //        self.responderView.delegate = self
         
-//        let datePicker = UIDatePicker(frame: .zero)
-//        datePicker.addTarget(self, action: #selector(datePickerDidChangeValue(sender:)), for: .valueChanged)
-//        self.responderView.inputView = datePicker
+        //        let datePicker = UIDatePicker(frame: .zero)
+        //        datePicker.addTarget(self, action: #selector(datePickerDidChangeValue(sender:)), for: .valueChanged)
+        //        self.responderView.inputView = datePicker
     }
 }
 
@@ -375,14 +377,14 @@ extension DesignablePicker: PickerInputViewControllerDelegate
 {
     func pickerInputViewControllerDidCancel(_ controller: PickerInputViewController)
     {
-//        print("[\(type(of: self)) \(#function)]")
+        //        print("[\(type(of: self)) \(#function)]")
         self.responderView.resignFirstResponder()
         self.delegate?.pickerInputDidCancel(self)
     }
     
     func pickerInput(_ controller: PickerInputViewController, doneWithValue value: String, andIndex index:Int)
     {
-//        print("[\(type(of: self)) \(#function)]")
+        //        print("[\(type(of: self)) \(#function)]")
         self.set(text: value, animated: true)
         self.responderView.resignFirstResponder()
         self.delegate?.pickerInput(self, doneWithValue: value, andIndex: index)
@@ -390,13 +392,13 @@ extension DesignablePicker: PickerInputViewControllerDelegate
     
     func pickerInput(_ controller: PickerInputViewController, changedWithValue value: String, andIndex index:Int)
     {
-//        print("[\(type(of: self)) \(#function)]")
+        //        print("[\(type(of: self)) \(#function)]")
         self.delegate?.pickerInput?(self, changedWithValue: value, andIndex: index)
     }
     
     func pickerInput(_ controller: PickerInputViewController, viewForRow row: Int, reusing view: UIView?) -> UIView?
     {
-//        print("[\(type(of: self)) \(#function)]")
+        //        print("[\(type(of: self)) \(#function)]")
         if let delegateView = self.delegate?.pickerInput?(self, viewForRow: row, reusing: view) {
             return delegateView
         }
@@ -405,7 +407,7 @@ extension DesignablePicker: PickerInputViewControllerDelegate
     
     func pickerInput(_ controller: PickerInputViewController, titleForRow row: Int) -> String?
     {
-//        print("[\(type(of: self)) \(#function)]")
+        //        print("[\(type(of: self)) \(#function)]")
         if let delegateTitle = self.delegate?.pickerInput?(self, titleForRow: row) {
             // try to get title from delegate
             return delegateTitle
@@ -415,10 +417,11 @@ extension DesignablePicker: PickerInputViewControllerDelegate
     
     func pickerInputRowHeight(_ controller: PickerInputViewController) -> CGFloat?
     {
-//        print("[\(type(of: self)) \(#function)]")
+        //        print("[\(type(of: self)) \(#function)]")
         if let rowHeightForComponent = self.delegate?.pickerInputRowHeight?(self) {
             return rowHeightForComponent
         }
         return nil
     }
 }
+
